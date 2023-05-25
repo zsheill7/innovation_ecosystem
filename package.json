@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "google-spreadsheet": "^3.3.0",
+    "react-leaflet": "^4.2.0"
+  }
+}
