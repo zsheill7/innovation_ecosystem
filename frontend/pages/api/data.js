@@ -20,20 +20,24 @@ export default async function handler(req, res) {
     const ecosystem_sheet = doc.sheetsByIndex[0];
     const startup_sheet = doc.sheetsByIndex[1];
 
-    console.log("ecosystem_sheet");
-    console.log(ecosystem_sheet);
-
     const ecosystem_rows = await ecosystem_sheet.getRows();
     const startup_rows = await startup_sheet.getRows();
 
-    console.log("ecosystem_rows");
-    console.log(ecosystem_rows);
+    const ecosystem_data = ecosystem_rows.map((row) => {
+      let obj = {};
+      ecosystem_sheet.headerValues.forEach((header, index) => {
+        obj[header] = row._rawData[index];
+      });
+      return obj;
+    });
 
-    const ecosystem_data = ecosystem_rows.map((row) => row._rawData);
-    const startup_data = startup_rows.map((row) => row._rawData);
-
-    console.log("ecosystem_data");
-    console.log(ecosystem_data);
+    const startup_data = startup_rows.map((row) => {
+      let obj = {};
+      startup_sheet.headerValues.forEach((header, index) => {
+        obj[header] = row._rawData[index];
+      });
+      return obj;
+    });
 
     const data = {
       ecosystems: ecosystem_data,

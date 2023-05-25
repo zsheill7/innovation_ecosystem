@@ -36,6 +36,13 @@ function Home() {
           >
             View Map
           </Link>
+
+          <Link
+            href="/gsheets_map"
+            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded ml-4"
+          >
+            Map from Google Sheets
+          </Link>
         </div>
       </div>
     </div>

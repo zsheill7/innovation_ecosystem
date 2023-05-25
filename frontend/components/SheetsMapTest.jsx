@@ -5,20 +5,6 @@ import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import EntityList from './EntityList'; // Import EntityList component
 
-// Credentials for Google Sheets API
-
-// Replace with your own credentials
-//const creds = require('/Users/zoe/Dropbox (MIT)/classes-spring-23/UROP/healthcare_webapp/keys/healthcare-webapp-387816-d6c1c0bab59a.json'); 
-
-// async function loadSpreadsheetData(spreadsheetId) {
-//   const doc = new GoogleSpreadsheet(spreadsheetId);
-//   await doc.useServiceAccountAuth(creds);
-//   await doc.loadInfo();
-//   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
-//   const rows = await sheet.getRows();
-//   return rows;
-// }
-
 export function ChangeView({ coords }) {
     const map = useMap();
     map.setView(coords, 14);
@@ -35,6 +21,8 @@ export default function Map() {
         fetch('/api/data')
           .then(response => response.json())
           .then(data => {
+            console.log("data68");
+            console.log(data.startups);
             const startupsWithCoords = data.startups
               .map((startup) => ({
                 ...startup,
