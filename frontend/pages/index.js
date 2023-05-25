@@ -24,12 +24,6 @@ function Home() {
           development.
         </p>
         <div>
-          {/* <Link
-            href="/graph"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded"
-          >
-            View Graph
-          </Link> */}
           <Link
             href="/sample_map"
             className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded ml-4"
@@ -43,6 +37,12 @@ function Home() {
           >
             Map from Google Sheets
           </Link>
+          {/* <Link
+            href="/graph"
+            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded"
+          >
+            View Graph
+          </Link> */}
         </div>
       </div>
     </div>
